@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Document</title>
+</head>
+<body>
+    <h1>Consumindo API</h1>
+<label>DIGITE SEU CEP</label>
+<input type="num" id="cep">
+<button onclick="consultaEndereco()">RESULTADO</button>
+<div id="resultado"></div>
+<p>Seu resultado aqui</p>
+
+<script>
+function consultaEndereco()  {
+
+let cep = document.querySelector('#cep').value;
+let url = 'https://viacep.com.br/ws/'+ cep +'/json/';
+
+fetch(url).then(function(response){
+response.json().then(function(data){
+
+
+    console.log(data)
+});
+
+})
+
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>
