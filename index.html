@@ -12,7 +12,7 @@
 <input type="num" id="cep">
 <button onclick="consultaEndereco()">RESULTADO</button>
 <div id="resultado"></div>
-<p>Seu resultado aqui</p>
+<p id="conc1">Seu resultado aqui</p>
 
 <script>
 function consultaEndereco()  {
@@ -24,16 +24,34 @@ fetch(url).then(function(response){
 response.json().then(function(data){
 
 
-    console.log(data)
+    console.log(data);
+
+
+
+
+
+document.getElementById('conc1').innerHTML = JSON.stringify(data);
+
 });
 
+
 })
+
+
+
+
+
 
 }
 
 
 
+
+
 </script>
+
+
+
 
 
 
